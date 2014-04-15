@@ -7,4 +7,7 @@
 To add a file type in git -A
 
 ##Commiting a file
-To commit a file do commit -m
+To commit a file do
+'''
+commit -m
+'''
