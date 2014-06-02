@@ -11,7 +11,7 @@ best = function(state, outcome){
     }
     conditions = c("heart attack", "heart failure", "pneumonia")
     if(!(outcome %in% conditions)){
-        return("invalid outcome")
+        stop("invalid outcome")
     }
     else{
     #Make dictionary of values
@@ -25,6 +25,6 @@ best = function(state, outcome){
     
     z = tapply(sub[[l[[outcome]]]], sub[["Hospital.Name"]], FUN = mean, na.rm=T)
     z = sort(z)
-    #rownames(z)[1]
+    return(z)
     }
 }
