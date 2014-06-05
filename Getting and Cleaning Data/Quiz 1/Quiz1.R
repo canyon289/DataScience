@@ -1,5 +1,5 @@
 #Set working directory
-setwd("C:/Users/carbon/Dropbox/Coursera/Getting and Cleaning Data/Quiz 1")
+setwd("C:/Users/carbon/Dropbox/Github/DataScience/Getting and Cleaning Data/Quiz 1")
 
 #Question 1
 #Download file
