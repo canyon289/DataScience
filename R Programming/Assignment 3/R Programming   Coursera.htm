@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<!-- saved from url=(0096)https://class.coursera.org/rprog-003/human_grading/view/courses/972138/assessments/3/submissions -->
+<html xmlns:fb="http://ogp.me/ns/fb#" itemtype="http://schema.org" class="supports-svg polyfill-important"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=IE7"><meta name="fragment" content="!"><meta name="robots" content="NOODP"><meta charset="utf-8"><meta property="og:title" content="Coursera"><meta property="og:type" content="website"><meta property="og:image" content="http://s3.amazonaws.com/coursera/media/Coursera_Computer_Narrow.png"><meta property="og:url" content="https://www.coursera.org/"><meta property="og:site_name" content="Coursera"><meta property="og:locale" content="en_US"><meta property="og:description" content="Take free online classes from 80+ top universities and organizations. Coursera is a social entrepreneurship company partnering with Stanford University, Yale University, Princeton University and others around the world to offer courses online for anyone to take, for free. We believe in connecting people to a great education so that anyone around the world can learn without limits."><meta property="fb:admins" content="727836538,4807654"><meta property="fb:app_id" content="274998519252278"><meta name="description" content="Take free online classes from 80+ top universities and organizations. Coursera is a social entrepreneurship company partnering with Stanford University, Yale University, Princeton University and others around the world to offer courses online for anyone to take, for free. We believe in connecting people to a great education so that anyone around the world can learn without limits."><meta name="image" content="http://s3.amazonaws.com/coursera/media/Coursera_Computer_Narrow.png"><meta name="apple-itunes-app" content="app-id=736535961"><title>R Programming | Coursera</title>    <link rel="stylesheet" href="https://class.coursera.org/rprog-003/human_grading/view/courses/972138/assessments/3/shims/styles/shim.css"><link href="./R Programming   Coursera_files/spark.main.css" rel="stylesheet" type="text/css">
+      <link href="./R Programming   Coursera_files/course.css" rel="stylesheet" type="text/css">
+      <link href="./R Programming   Coursera_files/hg.css" rel="stylesheet" type="text/css">
+    <link href="https://spark-public.s3.amazonaws.com/rprog/static/images/favicon.ico" rel="icon">
+<script type="text/javascript" async="" src="./R Programming   Coursera_files/MathJax.js"></script><script type="text/javascript" async="" src="./R Programming   Coursera_files/ga.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="pages/hg/js/app/routes" src="./R Programming   Coursera_files/routes.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="204js" data-requiremodule="_204" src="./R Programming   Coursera_files/204.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="pages/spark/views/template/header" src="./R Programming   Coursera_files/header.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="pages/spark/views/template/sidebar" src="./R Programming   Coursera_files/sidebar.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="js/lib/readme" src="./R Programming   Coursera_files/readme.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="pages/spark/views/template/header.html" src="./R Programming   Coursera_files/header.html.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="pages/spark/views/template/sidebar.html" src="./R Programming   Coursera_files/sidebar.html.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="spark/app/signature/js/signature_track" src="./R Programming   Coursera_files/signature_track.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="spark/app/signature/js/signatureTrackLastChanceModal.html" src="./R Programming   Coursera_files/signatureTrackLastChanceModal.html.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="spark/app/signature/js/flexjoinLastChanceModal.html" src="./R Programming   Coursera_files/flexjoinLastChanceModal.html.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="pages/spark/views/template/nls/header" src="./R Programming   Coursera_files/header(1).js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="pages/spark/views/template/nls/sidebar" src="./R Programming   Coursera_files/sidebar(1).js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="shims/form-core.js" src="./R Programming   Coursera_files/form-core.js"></script><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; border: 0; padding: 0; margin: 0}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0 !important; padding: 0 !important; margin: 0 !important; vertical-align: 0 !important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap ! important}
+.MathJax img {display: inline ! important; float: none ! important}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block; overflow: hidden; width: 1px; height: 60ex}
+.MathJax .MathJax_EmBox {display: block; overflow: hidden; width: 1px; height: 60em}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Main; src: url('https://d2265nx4vomwra.cloudfront.net/2.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff') format('woff'), url('https://d2265nx4vomwra.cloudfront.net/2.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf') format('opentype')}
+@font-face {font-family: MathJax_Main; src: url('https://d2265nx4vomwra.cloudfront.net/2.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff') format('woff'), url('https://d2265nx4vomwra.cloudfront.net/2.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf') format('opentype'); font-weight: bold}
+@font-face {font-family: MathJax_Main; src: url('https://d2265nx4vomwra.cloudfront.net/2.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff') format('woff'), url('https://d2265nx4vomwra.cloudfront.net/2.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf') format('opentype'); font-style: italic}
+@font-face {font-family: MathJax_Math; src: url('https://d2265nx4vomwra.cloudfront.net/2.1/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff') format('woff'), url('https://d2265nx4vomwra.cloudfront.net/2.1/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf') format('opentype'); font-style: italic}
+@font-face {font-family: MathJax_Caligraphic; src: url('https://d2265nx4vomwra.cloudfront.net/2.1/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff') format('woff'), url('https://d2265nx4vomwra.cloudfront.net/2.1/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf') format('opentype')}
+@font-face {font-family: MathJax_Size1; src: url('https://d2265nx4vomwra.cloudfront.net/2.1/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff') format('woff'), url('https://d2265nx4vomwra.cloudfront.net/2.1/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf') format('opentype')}
+@font-face {font-family: MathJax_Size2; src: url('https://d2265nx4vomwra.cloudfront.net/2.1/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff') format('woff'), url('https://d2265nx4vomwra.cloudfront.net/2.1/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf') format('opentype')}
+@font-face {font-family: MathJax_Size3; src: url('https://d2265nx4vomwra.cloudfront.net/2.1/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff') format('woff'), url('https://d2265nx4vomwra.cloudfront.net/2.1/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf') format('opentype')}
+@font-face {font-family: MathJax_Size4; src: url('https://d2265nx4vomwra.cloudfront.net/2.1/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff') format('woff'), url('https://d2265nx4vomwra.cloudfront.net/2.1/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf') format('opentype')}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuTitle {background-color: #CCCCCC; margin: -1px -1px 1px -1px; text-align: center; font-style: italic; font-size: 80%; color: #444444; padding: 2px 0; overflow: hidden}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style></head><body class=" hasGoogleVoiceExt wysihtml5-supported"><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div><div id="fb-root"></div><div id="spark-help" class="hide"></div><a href="http://help.coursera.org/customer/widget/emails/new" target="_blank"><div style="z-index: 1" data-networkprioritysupportwidget="" role="button" class="helpwidget-tab hide">Premium Support</div></a><div id="origami"><div><div><div class="coursera-page"><div role="menubar" class="coursera-header"><div class="hidden">This page features MathJax technology to render mathematical formulae.
+If you are using a screen reader, please visit <a href="http://www.dessci.com/en/products/mathplayer/">MathPlayer</a> to download the plugin for your browser. Please note that this is an Internet Explorer-only plugin at this time.</div><h1 class="hidden">R Programming</h1><!-- UNTIL dashboard announcement expires 2014-08-31 (then delete this code)--><div role="banner" class="course-topbar container-fluid"><div class="row-fluid"><div class="span3"><a href="https://www.coursera.org/" data-if-linkable="add-referrer" class="course-topbar-logo"></a></div><div style="float:right;" class="course-topbar-nav-container span9"><h2 class="hidden">Top Navigation Bar</h2><ul class="course-topbar-nav-list"><li class="course-topbar-nav-list-item"><a href="https://www.coursera.org/courses" data-if-linkable="add-referrer">Courses</a></li><li tabindex="0" role="button" aria-haspopup="true" aria-expanded="false" aria-owns="course-topbar-my" data-popup="#course-topbar-my" data-popup-bind-open="mouseenter" data-popup-close="data-popup-close" style="cursor:pointer;" data-popup-direction="se" class="course-topbar-nav-list-item"><a data-user-id="1586079">Ravin Kumar<i class="icon-caret-down"></i></a></li></ul></div></div><div id="course-topbar-aboutus" class="course-topbar-sublist"><a href="https://www.coursera.org//about/" target="_new" data-if-linkable="add-referrer" class="internal-about course-topbar-sublist-item">About Us</a><a href="https://www.coursera.org//about/careers" target="_new" data-if-linkable="add-referrer" class="internal-about course-topbar-sublist-item">Careers</a><a href="https://www.coursera.org//about/people" target="_new" data-if-linkable="add-referrer" class="internal-about course-topbar-sublist-item">People</a><a href="https://www.coursera.org//about/contact" target="_new" data-if-linkable="add-referrer" class="internal-about course-topbar-sublist-item">Contact Us</a></div><div id="course-topbar-my" class="course-topbar-sublist"><a data-popup-close="data-popup-close" href="https://www.coursera.org/" target="_new" class="course-topbar-sublist-item">My Courses</a><a data-popup-close="data-popup-close" href="https://www.coursera.org/account/profile" target="_new" class="course-topbar-sublist-item">Profile</a><a data-popup-close="data-popup-close" href="https://www.coursera.org/account/records" target="_new" class="course-topbar-sublist-item">Course Records</a><a href="https://www.coursera.org/account/settings" target="_new" class="course-topbar-sublist-item">Settings</a><a data-popup-close="data-popup-close" href="https://www.coursera.org/account/settings/signature" target="_new" class="course-topbar-sublist-item">Signature Track</a><a href="https://class.coursera.org/rprog-003/class/preferences" class="course-topbar-sublist-item">Course Preferences</a><a href="https://class.coursera.org/rprog-003/auth/logout" class="course-topbar-sublist-item">Sign Out</a></div></div><div class="course-topbanner-wrapper"><div class="course-topbanner"><div class="course-topbanner-university-logo"><a href="https://www.coursera.org/jhu" target="_blank" data-if-linkable="add-referrer" title="https://www.coursera.org/jhu" class="coursera-university-color"><img src="./R Programming   Coursera_files/university_logo" alt="jhu"></a></div><div class="course-signaturetrack"><div class="course-signaturetrack-topbanner-side-signaturetrack"><div class="course-signaturetrack-bannerbox-enrolled"><div role="button" aria-haspopup="false" aria-expanded="false" aria-owns="signature-track-photo-id-status" data-popup-offset-y="-7" data-popup-offset-x="-27" data-popup="#signature-track-photo-id-status" data-popup-bind-open="mouseenter" data-popup-direction="w" class="coursera-signaturetrack-topbanner">Signature Track</div></div><div id="signature-track-photo-id-status" style="width:340px" class="course-topbar-sublist"><div style="border-color: white" class="course-signaturetrack-sublist-arrow"></div><div target="_blank" class="course-topbar-sublist-item">Welcome! Have questions? Visit the <a href="https://www.coursera.org/signature/guidebook" target="_blank">guidebook</a>.</div></div></div></div><h1 class="course-topbanner-header"><a href="https://class.coursera.org/rprog-003/" data-if-linkable="modal-lock" class="course-topbanner-name coursera-university-color">R Programming</a><br><span style="" class="course-topbanner-instructor">by Roger D. Peng, PhD, Jeff Leek, PhD, Brian Caffo, PhD</span></h1></div></div></div><div style="position:relative;" class="container-fluid"><div class="row-fluid"><div id="course-page-sidebar" role="navigation"><div role="menubar" class="coursera-sidebar"><div id="course-page-sidebar" role="navigation"><div class="course-navbar-container"><a href="https://class.coursera.org/rprog-003" data-ab-user-convert-for="honorcode_to_welcome2" data-ab-user-convert="navclick_index"><img src="./R Programming   Coursera_files/logo" style="width: 205px;height: 116px;margin: -15px 0px 8px 1px; box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);" alt="Course Home Page"></a><div data-coursera-course-search-nav-widget="data-coursera-course-search-nav-widget" class="input-append course-search-nav-box"><form method="get" action="https://class.coursera.org/rprog-003/class/search" data-js-search-form="data-js-search-form" class="form-inline minimized-search"><label for="course-search-nav-input" class="accessible-text-for-reader">Search this course</label><input id="course-search-nav-input" type="text" name="q" data-js-search-input="data-js-search-input">&nbsp;<button type="submit" data-ab-user-convert-for="honorcode_to_welcome2" data-ab-user-convert="search" class="btn icon-search"><span class="accessible-text-for-reader">Search</span></button></form></div><h2 class="hidden">Side Navigation Bar</h2><ul class="course-navbar-list"><li class="course-navbar-item"></li><li class="course-navbar-item"><h3>Course</h3></li><li class="course-navbar-item"><a href="https://class.coursera.org/rprog-003/class/index" data-if-linkable="modal-lock,gray,lock-icon" data-ab-user-convert-for="honorcode_to_welcome2" data-ab-user-convert="navclick_Announcements" class="coursera-university-color"><span>Announcements </span><span></span></a></li><li class="course-navbar-item"><a href="https://class.coursera.org/rprog-003/lecture/index" data-if-linkable="modal-lock,gray,lock-icon" data-ab-user-convert-for="honorcode_to_welcome2" data-ab-user-convert="navclick_Video_Lectures" class="coursera-university-color"><span>Video Lectures </span><span></span></a></li><li class="course-navbar-item"><a href="https://class.coursera.org/rprog-003/forum/index" data-if-linkable="modal-lock,gray,lock-icon" data-ab-user-convert-for="honorcode_to_welcome2" data-ab-user-convert="navclick_Discussion_Forums" class="coursera-university-color"><span>Discussion Forums </span><span></span></a></li><li class="course-navbar-item"></li><li class="course-navbar-item"><h3>Exercises</h3></li><li class="course-navbar-item"><a href="https://class.coursera.org/rprog-003/quiz/index" data-if-linkable="modal-lock,gray,lock-icon" data-ab-user-convert-for="honorcode_to_welcome2" data-ab-user-convert="navclick_Quizzes" class="coursera-university-color"><span>Quizzes </span><span></span></a></li><li class="course-navbar-item"><a href="https://class.coursera.org/rprog-003/assignment/index" data-if-linkable="modal-lock,gray,lock-icon" data-ab-user-convert-for="honorcode_to_welcome2" data-ab-user-convert="navclick_Programming_Assignments_1,_3,_&amp;_swirl" class="coursera-university-color"><span>Programming Assignments 1, 3, &amp; swirl </span><span></span></a></li><li class="course-navbar-item"><a href="https://class.coursera.org/rprog-003/human_grading/index" data-if-linkable="modal-lock,gray,lock-icon" data-ab-user-convert-for="honorcode_to_welcome2" data-ab-user-convert="navclick_Programming_Assignment_2" class="coursera-university-color"><span>Programming Assignment 2 </span><span></span></a></li><li class="course-navbar-item"></li><li class="course-navbar-item"><h3>About the course</h3></li><li class="course-navbar-item"><a href="https://class.coursera.org/rprog-003/wiki/syllabus" data-if-linkable="modal-lock,gray,lock-icon" data-ab-user-convert-for="honorcode_to_welcome2" data-ab-user-convert="navclick_Syllabus" class="coursera-university-color"><span>Syllabus </span><span></span></a></li><li class="course-navbar-item"><a href="https://class.coursera.org/rprog-003/wiki/About_the_Instructor" data-if-linkable="modal-lock,gray,lock-icon" data-ab-user-convert-for="honorcode_to_welcome2" data-ab-user-convert="navclick_About_the_Instructor" class="coursera-university-color"><span>About the Instructor </span><span></span></a></li><li class="course-navbar-item"><h3>Community</h3></li><li class="course-navbar-item"><a href="http://www.meetup.com/Coursera/" target="_blank" class="coursera-university-color">Join a Meetup<span class="icon-share"></span><span class="accessible-text-for-reader">opens in new browser tab</span></a></li></ul><ul style="list-style-type:none;margin-left: 10px;"><li><a href="http://help.coursera.org/" target="_blank" title="Open help articles in new window" class="coursera-university-color"><i class="icon-question-sign"></i>Help Articles</a></li></ul><ul style="list-style-type:none;margin-left: 10px;"><li><a href="https://class.coursera.org/rprog-003/forum/list?forum_id=10000&url=https%3A%2F%2Fclass.coursera.org%2Frprog-003%2Fhuman_grading%2Fview%2Fcourses%2F972138%2Fassessments%2F3" class="coursera-university-color"><i class="icon-comments"></i>Course Materials Errors</a></li><li><a href="https://class.coursera.org/rprog-003/forum/list?forum_id=10001&url=https%3A%2F%2Fclass.coursera.org%2Frprog-003%2Fhuman_grading%2Fview%2Fcourses%2F972138%2Fassessments%2F3" class="coursera-university-color"><i class="icon-comments"></i>Technical Issues</a></li></ul></div></div></div></div><div id="course-page-content" role="main"><div id="spark" class="hide" style="display: block;"><div id="main"><div id="AssessmentsLayout">
+<div id="hg-data" style="display: none">
+  <input id="hg-data-phase" type="hidden">
+  <input id="hg-data-step" type="hidden">
+  <input id="hg-data-step-page" type="hidden">
+  <input id="hg-data-data" type="hidden">
+</div><a data-coursera-admin-helpwidget-link="data-coursera-admin-helpwidget-link" rel="help" href="https://class.coursera.org/mooc/help/peer" title="Peer Assessments" target="_blank" style="display:none;">Learn more</a>
+<div id="assessmentContainer" aria-live="polite" class="container-fluid">
+  <div id="assessmentNavigationRegion" class="navigationRegion"><div id="AssessmentNavigationView">
+<ul class="breadcrumb">
+  <li><a href="https://class.coursera.org/rprog-003/human_grading/">Peer Assessments</a></li>
+  <li><span class="divider">/</span>Programming Assignment 2: Lexical Scoping</li><a target="_blank" href="https://class.coursera.org/rprog-003/help/peergrading?url=https%3A%2F%2Fclass.coursera.org%2Frprog-003%2Fhuman_grading%2Fview%2Fcourses%2F972138%2Fassessments%2F3%2Fsubmissions" title="Click here if you&#39;re experiencing technical problems or found errors in the course materials." class="coursera-reporter-link">Help</a>
+</ul>
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <ul id="hg-nav" class="nav">
+        <li id="hg-nav-phase-submitting" class="hg-nav-phase hg-nav-border-left hg-nav-border-right hg-phase-active hg-phase-relevant" data-hg-date-status="current">
+          <div class="hg-nav-top-row">
+            <div class="progress progress-info">
+              <div class="bar" style="width: 75%;"></div>
+            </div>
+            <div class="hg-asst-interval">
+              <div class="hg-asst-interval-part hg-asst-interval-open" style="display: none;"><span data-livetimer-date-primitive="1399208400000" class="hg-date" data-livetimer-date-original="Sun  4 May 2014  6:00 AM PDT" title="opened on Sun  4 May 2014  6:00 AM PDT
+(2 weeks, 3 days ago)" data-hg-date-status="" style="height: 0px; width: 0px;"><span class="livetimer-absolute" style="display: none;">opened Sun  4 May 2014  6:00 AM PDT</span><span class="livetimer-relative">opened 2wk 3d ago</span></span></div>
+              <div class="hg-asst-interval-part hg-asst-interval-close"><span data-livetimer-date-primitive="1401060600000" class="hg-date" data-livetimer-date-original="Sun 25 May 2014  4:30 PM PDT" title="is due on Sun 25 May 2014  4:30 PM PDT
+(in 4 days, 23 hours)" data-hg-date-status="" style="height: 0px; width: 0px;"><span class="livetimer-absolute" style="display: none;">due Sun 25 May 2014  4:30 PM PDT</span><span class="livetimer-relative">due in 4day 23h</span></span></div>
+            </div>
+            <div class="hg-asst-phase-reload"><a href="https://class.coursera.org/rprog-003/human_grading/view/courses/972138/assessments/3/submissions#" class="hg-internal hg-reload">Reload</a>&nbsp;to open</div>
+            <div class="hg-nav-phase-header"><span>Submission Phase</span></div>
+          </div>
+          <ul class="nav hg-nav-bottom-row">
+            <li id="hg-nav-step-submitting" class="hg-nav-step active"><a href="./R Programming   Coursera_files/R Programming   Coursera.htm" class="hg-internal" data-original-title=""><span class="step">1.</span><span>Do assignment</span><span class="hg-nav-step-status hg-nav-step-status-select-todo"><span class="hg-nav-step-status-todo icon-check-empty"></span><span class="hg-nav-step-status-other"></span></span></a></li>
+          </ul>
+        </li>
+        <li id="hg-nav-phase-grading" class="hg-nav-phase hg-nav-border-left hg-nav-border-right" data-hg-date-status="future">
+          <div class="hg-nav-top-row">
+            <div class="progress progress-info">
+              <div class="bar" style="width: 0px;"></div>
+            </div>
+            <div class="hg-asst-interval">
+              <div class="hg-asst-interval-part hg-asst-interval-open"><span data-livetimer-date-primitive="1401492600000" class="hg-date" data-livetimer-date-original="Fri 30 May 2014  4:30 PM PDT" title="opens on Fri 30 May 2014  4:30 PM PDT
+(in 1 week, 3 days)" data-hg-date-status="" style="height: 0px; width: 0px;"><span class="livetimer-absolute" style="display: none;">open Fri 30 May 2014  4:30 PM PDT</span><span class="livetimer-relative">open in 1wk 3d</span></span></div>
+              <div class="hg-asst-interval-part hg-asst-interval-close" style="display: none;"><span data-livetimer-date-primitive="1401665400000" class="hg-date" data-livetimer-date-original="Sun  1 Jun 2014  4:30 PM PDT" title="is due on Sun  1 Jun 2014  4:30 PM PDT
+(in 1 week, 5 days)" data-hg-date-status="" style="height: 0px; width: 0px;"><span class="livetimer-absolute" style="display: none;">due Sun  1 Jun 2014  4:30 PM PDT</span><span class="livetimer-relative">due in 1wk 5d</span></span></div>
+            </div>
+            <div class="hg-asst-phase-reload"><a href="https://class.coursera.org/rprog-003/human_grading/view/courses/972138/assessments/3/submissions#" class="hg-internal hg-reload">Reload</a>&nbsp;to open</div>
+            <div class="hg-nav-phase-header"><span>Evaluation Phase</span></div>
+          </div>
+          <ul class="nav hg-nav-bottom-row">
+            <li id="hg-nav-step-peerGrading" class="hg-nav-step"><a href="https://class.coursera.org/rprog-003/human_grading/view/courses/972138/assessments/3/peerGradingSets" class="hg-internal disabled" data-original-title="" disabled="disabled"><span class="step">2.</span><span>Evaluate peers</span><span class="hg-nav-step-status hg-nav-step-status-select-other"><span class="hg-nav-step-status-todo icon-check-empty"></span><span class="hg-nav-step-status-other icon-lock"></span></span></a></li>
+          </ul>
+        </li>
+        <li id="hg-nav-phase-results" class="hg-nav-phase hg-nav-border-left hg-nav-border-right" data-hg-date-status="future">
+          <div class="hg-nav-top-row">
+            <div class="progress progress-info">
+              <div class="bar" style="width: 0px;"></div>
+            </div>
+            <div class="hg-asst-interval">
+              <div class="hg-asst-interval-part hg-asst-interval-available"><span data-livetimer-date-primitive="1401669000000" class="hg-date" data-livetimer-date-original="Sun  1 Jun 2014  5:30 PM PDT" title="available Sun  1 Jun 2014  5:30 PM PDT
+(in 1 week, 5 days)" data-hg-date-status="" style="height: 0px; width: 0px;"><span class="livetimer-absolute" style="display: none;">available Sun  1 Jun 2014  5:30 PM PDT</span><span class="livetimer-relative">in 1wk 5d</span></span></div>
+            </div>
+            <div class="hg-asst-phase-reload"><a href="https://class.coursera.org/rprog-003/human_grading/view/courses/972138/assessments/3/submissions#" class="hg-internal hg-reload">Reload</a>&nbsp;to open</div>
+            <div class="hg-nav-phase-header"><span>Results Phase</span></div>
+          </div>
+          <ul class="nav hg-nav-bottom-row">
+            <li id="hg-nav-step-results" class="hg-nav-step"><a href="https://class.coursera.org/rprog-003/human_grading/view/courses/972138/assessments/3/results/mine" class="hg-internal disabled" data-original-title="" disabled="disabled"><span class="step">3.</span><span>See results</span><span class="hg-nav-step-status hg-nav-step-status-select-other"><span class="hg-nav-step-status-other icon-lock"></span></span></a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div></div></div>
+  <div id="assessmentMessages"></div>
+  <div id="assessmentContentRegion" class="contentRegion"><div style="display: block;">
+<!-- h1.assessmentTitle Programming Assignment 2: Lexical Scoping-->
+<div id="assessmentForm">
+  <div id="topContentToolbar" class="contentToolbar form-actions">
+<div class="assessmentActionBar"><div class="contentToolbarButtons"><div class="pull-left" style="text-align: left;"><p><label><input type="checkbox" id="honorCode" class="honorCode">&nbsp;In accordance with the Honor Code, I certify that my answers here are my own work, and that I have appropriately acknowledged all external sources (if any) that were used in this work.</label></p></div><div class="pull-right"><a id="assessmentSave" href="https://class.coursera.org/rprog-003/human_grading/view/courses/972138/assessments/3/submissions#" role="button" class="hg-internal btn">Save draft</a><a disabled="disabled" id="assessmentSubmit" href="https://class.coursera.org/rprog-003/human_grading/view/courses/972138/assessments/3/submissions#" role="button" class="assessmentSubmit hg-internal btn disabled">Submit for grading</a></div></div></div></div>
+  <div id="assessmentFormContent"><div class="submissionForm"><div id="assessmentHead"><div id="forumThreadLinkSection"></div></div><div id="evaluatedGroup-5565b336a4b2071" class="assessmentSection"><div class="assessmentExposition"><div class="assessmentText" dir="auto"><h3>Introduction</h3>
+
+<p>This second programming assignment will require you to write an R
+function is able to cache potentially time-consuming computations. For
+example, taking the mean of a numeric vector is typically a fast
+operation. However, for a very long vector, it may take too long to
+compute the mean, especially if it has to be computed repeatedly
+(e.g. in a loop). If the contents of a vector are not changing, it may
+make sense to cache the value of the mean so that when we need it
+again, it can be looked up in the cache rather than recomputed.  In
+this Programming Assignment will take advantage of the scoping rules
+of the R language and how they can be manipulated to preserve state
+inside of an R object.</p>
+
+
+<h3>Example: Caching the Mean of a Vector</h3>
+
+<p>In this example we introduce the <tt>&lt;&lt;-</tt> operator which can be
+used to assign a value to an object in an environment that is
+different from the current environment. Below are two functions that
+are used to create a special object that stores a numeric vector and
+cache's its mean. </p>
+
+The first function, <tt>makeVector</tt> creates a special "vector",
+which is really a list containing a function to
+<ol>
+<li>set the value of the vector</li>
+<li>get the value of the vector</li>
+<li>set the value of the mean</li>
+<li>get the value of the mean</li>
+</ol>
+
+<pre>makeVector &lt;- function(x = numeric()) {
+        m &lt;- NULL
+        set &lt;- function(y) {
+                x &lt;&lt;- y
+                m &lt;&lt;- NULL
+        }
+        get &lt;- function() x
+        setmean &lt;- function(mean) m &lt;&lt;- mean
+        getmean &lt;- function() m
+        list(set = set, get = get,
+             setmean = setmean,
+             getmean = getmean)
+}
+</pre>
+
+<p>The following function calculates the mean of the special "vector"
+created with the above function. However, it first checks to see if
+the mean has already been calculated. If so, it <tt>get</tt>s the mean
+from the cache and skips the computation. Otherwise, it calculates the
+mean of the data and sets the value of the mean in the cache via
+the <tt>setmean</tt> function.</p>
+
+<pre>cachemean &lt;- function(x, ...) {
+        m &lt;- x$getmean()
+        if(!is.null(m)) {
+                message("getting cached data")
+                return(m)
+        }
+        data &lt;- x$get()
+        m &lt;- mean(data, ...)
+        x$setmean(m)
+        m
+}
+</pre>
+
+
+<h3>Assignment: Caching the Inverse of a Matrix</h3>
+
+<p>Matrix inversion is usually a costly computation and their may be some
+benefit to caching the inverse of a matrix rather than compute it
+repeatedly (there are also alternatives to matrix inversion that we
+will not discuss here). Your assignment is to write a pair of
+functions that cache the inverse of a matrix.</p>
+
+<p>Write the following functions:</p>
+
+<ol>
+
+<li><tt>makeCacheMatrix</tt>: This function creates a special
+"matrix" object that can cache its inverse.</li>
+
+<li><tt>cacheSolve</tt>: This function computes the inverse of the
+special "matrix" returned by <tt>makeCacheMatrix</tt> above. If the
+inverse has already been calculated (and the matrix has not changed),
+then the <tt>cachesolve</tt> should retrieve the inverse from the
+cache.</li>
+
+</ol>
+
+<p>Computing the inverse of a square matrix can be done with
+the <tt>solve</tt> function in R. For example, if <tt>X</tt> is a
+square invertible matrix, then <tt>solve(X)</tt> returns its
+inverse.</p>
+
+<p>For this assignment, assume that the matrix supplied is always
+invertible.</p>
+
+<p>In order to complete this assignment, you must do the following:</p>
+
+<ol>
+
+
+
+<li>Fork the GitHub repository containing the stub R files at <a href="https://github.com/rdpeng/ProgrammingAssignment2">https://github.com/rdpeng/ProgrammingAssignment2</a>
+to create a copy under your own account.</li>
+
+<li>Clone your forked GitHub repository to your computer so that you can edit the files locally on your own machine.</li>
+
+<li>Edit the R file contained in the git repository and place your
+solution in that file (please do not rename the file).</li>
+
+<li>Commit your completed R file into YOUR git repository and push
+your git branch to the GitHub repository under your account.</li>
+
+<li>Submit to Coursera the URL to your GitHub repository that contains
+the completed R code for the assignment.</li>
+
+</ol>
+
+
+<h3>Grading</h3>
+
+This assignment will be graded via peer assessment.</div></div></div><div id="evaluatedGroup-1646371b7286ed93" class="assessmentSection"><div id="evaluatedGroup-8739bb4876c32be1" class="assessmentGroup"><div class="assessmentExposition"><div id="assessmentText-8739bb4876c32be1" class="assessmentText" dir="auto">Please submit the URL pointing to your GitHub repository containing the completed R code for this assignment.</div></div><div class="assessmentAnswer" aria-labelledby="assessmentText-8739bb4876c32be1"><div id="5be4b9aff212f54-validationErrorMessage" class="validationErrorMessage"></div><div id="5be4b9aff212f54-validationErrorContainer"><div style="position: relative;" role="toolbar" tabindex="0" title="HTML editing toolbar" class="coursera-wysihtml5-toolbar"><div style="overflow:auto;"><div style="float:left;" class="left coursera-wysihtml5-commands"><span data-wysihtml5-order="0" class="hide"></span><button data-wysihtml5-order="1" data-wysihtml5-command="bold" aria-pressed="false" style="font-weight:bold; width: 30px;" type="button" title="Make text bold" class="coursera-wysihtml5-toolbar-item" href="javascript:;" unselectable="on">B</button><button data-wysihtml5-order="2" data-wysihtml5-command="italic" aria-pressed="false" style="font-style:italic; font-family: serif; width: 30px;" type="button" title="Make text italic" class="coursera-wysihtml5-toolbar-item" href="javascript:;" unselectable="on">I</button><button data-wysihtml5-order="3" data-wysihtml5-command="insertUnOrderedList" aria-pressed="false" type="button" title="Insert bullets" style="width:30px;" class="coursera-wysihtml5-toolbar-item" href="javascript:;" unselectable="on"><span class="icon-list-ul"></span></button><button data-wysihtml5-order="4" data-wysihtml5-command="insertOrderedList" aria-pressed="false" type="button" title="Insert numbered bullets" style="width:30px;" class="coursera-wysihtml5-toolbar-item" href="javascript:;" unselectable="on"><span class="icon-list-ol"></span></button><button data-wysihtml5-custom-command="link" type="button" unselectable="on" title="Insert link" class="coursera-wysihtml5-toolbar-item" data-wysihtml5-order="5"><span class="icon-link"></span> Link</button><button data-wysihtml5-command="code" data-wysihtml5-order="6" type="button" title="Format text as code" class="coursera-wysihtml5-toolbar-item" href="javascript:;" unselectable="on">&lt;code&gt;</button><button data-wysihtml5-custom-command="latex" title="Equation Editor" type="button" class="coursera-wysihtml5-toolbar-item coursera-wysihtml5-toolbar-latex" data-wysihtml5-order="100">Math</button></div><div style="float:right;" class="right coursera-wysihtml5-command-view"><span data-wysihtml5-order="0" class="hide"></span><button title="Editor Preview" type="button" aria-pressed="false" class="coursera-wysihtml5-toolbar-item coursera-wysihtml5-toolbar-item-right coursera-wysihtml5-toolbar-mode-preview" data-wysihtml5-order="100">Preview</button><button style="display:none;" type="button" class="coursera-wysihtml5-toolbar-item coursera-wysihtml5-toolbar-item-right coursera-wysihtml5-toolbar-mode-preview-close" data-wysihtml5-order="100">Edit</button><!-- we want to ensure that two editors are allowed if we are going to show a drop down...--><!-- the below uses XOR to determine the that one is true, and then we confirm the other is true in the ternary--><!-- this shortcut was used as the quickest way to determine at least two are true.--><!-- this comment proves that saving effort in code means expanding in comments...--><button unselectable="on" title="Editor Type" data-popup="#coursera-wysihtml5-toolbar-mode-popup-21" aria-haspopup="true" aria-expanded="false" aria-owns="coursera-wysihtml5-toolbar-mode-popup" data-popup-close="data-popup-close" data-popup-direction="se" style="padding-right:30px;" type="button" class="coursera-wysihtml5-toolbar-item coursera-wysihtml5-toolbar-item-right coursera-wysihtml5-toolbar-mode-editor on" data-wysihtml5-order="100"><span>Edit: </span><span class="coursera-wysihtml5-toolbar-mode-editor-label">Rich</span><span style="position:absolute;top:5px;padding-left:10px;padding-right:10px;" class="icon-sort-down"></span></button><div id="coursera-wysihtml5-toolbar-mode-popup-21" style="display:none;" class="coursera-wysihtml5-toolbar-mode-popup" data-wysihtml5-order="100"><a aria-pressed="false" data-wysihtml5-custom-command="change-editor" type="button" title="Change editing mode to HTML" data-popup-close="data-popup-close" class="coursera-wysihtml5-toolbar-mode-popup-item coursera-wysihtml5-toolbar-mode-html">&lt;HTML&gt;</a><a aria-pressed="true" data-wysihtml5-custom-command="change-editor" type="button" title="Change editing mode to rich editor" data-popup-close="data-popup-close" class="coursera-wysihtml5-toolbar-mode-popup-item coursera-wysihtml5-toolbar-mode-rich wysihtml5-command-active">Rich</a></div></div><div style="clear:both;"></div></div><div class="coursera-wysihtml5-toolbar-modals"><div data-wysihtml5-modal-link="data-wysihtml5-modal-link" data-modal-overlay-class="coursera-wysihtml5-overlay" role="dialog" aria-label="Create a link" class="modal hide"><form><div class="modal-body"><label style="display:inline-block;margin-right:15px;"><span>URL &nbsp;&nbsp;</span><input name="url" placeholder="http://" style="width:350px;" class="coursera-wysihtml5-modal-url"></label></div><div class="modal-footer"><button type="submit" data-modal-close="data-modal-close" style="margin-right:10px;" class="btn coursera-wysihtml5-modal-link-submit">Create</button><a data-modal-close="data-modal-close" href="javascript:;">Cancel</a></div></form></div><div data-wysihtml5-modal-latex="data-wysihtml5-modal-latex" data-modal-overlay-class="coursera-wysihtml5-overlay" class="modal hide"><form style="margin:0px;padding:0px;"><div style="overflow:auto;"><div style="float:left;width:20%;"><label style="padding:10px;font-weight:bold;text-align:right;">LaTeX:</label></div><div style="float:right;width:80%;"><textarea name="latex" placeholder="enter a latex equation" class="coursera-wysihtml5-modal-latex-textarea"></textarea></div></div><div class="coursera-wysihtml5-latex-preview-area"><div style="float:left;width:20%;"><label style="padding:10px;font-weight:bold;text-align:right;">Preview:</label></div><div style="float:right;width:80%;"><div class="coursera-wysihtml5-latex-preview"><span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-1-Frame" role="textbox" aria-readonly="true"><nobr><span class="math" id="MathJax-Span-1"><span style="display: inline-block; position: relative; width: 0px; height: 0px; font-size: 132%;"><span style="position: absolute; clip: rect(71px 18480px 77px -9px); top: -74px; left: 0px;"><span class="mrow" id="MathJax-Span-2"></span><span style="display: inline-block; width: 0px; height: 74px;"></span></span></span><span style="border-left-width: 0px; border-left-style: solid; display: inline-block; overflow: hidden; width: 0px; height: 2px; vertical-align: -1px;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-1"></script></div></div></div><div class="modal-footer"><button type="submit" data-modal-close="data-modal-close" style="margin-right:10px;" class="btn coursera-wysihtml5-modal-link-submit">Create</button><a data-modal-close="data-modal-close" href="javascript:;">Cancel</a></div></form></div></div></div><textarea id="textarea-5be4b9aff212f54" dir="auto" data-wysihtml5="true" data-modelbind="submission.fields.5be4b9aff212f54" aria-labelledby="assessmentText-8739bb4876c32be1" data-max-words="0" class="assessmentFormField coursera-wysihtml5-rich-editor" style="width: 100%; min-height: 100px; height: 100px; overflow-y: hidden; display: none;" data-count-words="0"></textarea><iframe class="wysihtml5-sandbox" security="restricted" allowtransparency="true" frameborder="0" width="0" height="0" marginwidth="0" marginheight="0" style="background-color: rgb(255, 255, 255); border-collapse: separate; border: 1px solid rgb(204, 204, 204); clear: none; display: inline-block; float: none; margin: 0px; outline: rgb(85, 85, 85) none 0px; outline-offset: 0px; padding: 4px 6px; position: static; top: auto; left: auto; right: auto; bottom: auto; z-index: auto; vertical-align: middle; text-align: start; box-sizing: border-box; -webkit-box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset; box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; border-top-left-radius: 4px; width: 100%; min-width: 0px; min-height: 100px; max-width: none; max-height: none; height: 102px;"></iframe><div class="coursera-wysihtml5-footer"><div class="coursera-wysihtml5-footer-rich"><div style="float:left;"></div><div style="float:right;"></div></div></div></div></div></div></div><div class="sectionEvaluationGroup" data-evaluated="evaluatedGroup-1646371b7286ed93"><div class="evaluationGroupHeader"><h3>Overall evaluation/feedback</h3><b>Note</b>: this section can only be filled out during the evaluation phase.</div><div id="evaluatedGroup-34e3e0ae91027516" class="assessmentGroup"><div class="assessmentExposition"><div id="assessmentText-34e3e0ae91027516" class="assessmentText" dir="auto">Was a valid GitHub URL containing a git repository submitted?<br><br>0 points: A valid GitHub URL was NOT submitted (or URL is broken)<br>1 point: The submitted URL points to a GitHub repository<br></div></div><div class="assessmentEvaluation" aria-labelledby="assessmentText-34e3e0ae91027516"><div id="94d8b2c6b367ae-validationErrorMessage" class="validationErrorMessage"></div><div id="94d8b2c6b367ae-validationErrorContainer"><select id="evaluationField-94d8b2c6b367ae" disabled="disabled" data-modelbind="evaluation.fields.94d8b2c6b367ae" aria-labelledby="assessmentText-34e3e0ae91027516" class="assessmentFormField">  <option value=""></option>  <option value="17cea929f4412a5">0: No, a valid GitHub URL has not been submitted</option>  <option value="e244dbc3b23883b4">1: Yes, the submitted URL points to a GitHub repository</option></select></div></div></div><div id="evaluatedGroup-4fa3e3cb429b5bc" class="assessmentGroup"><div class="assessmentExposition"><div id="assessmentText-4fa3e3cb429b5bc" class="assessmentText" dir="auto">Does the GitHub repository contain at least one commit beyond the original fork?<br><br>0 points:&nbsp;No, there are no commits beyond the original fork<br>1 point: Yes, there is at least one commit beyond the original fork<br></div></div><div class="assessmentEvaluation" aria-labelledby="assessmentText-4fa3e3cb429b5bc"><div id="5284450b268cd62-validationErrorMessage" class="validationErrorMessage"></div><div id="5284450b268cd62-validationErrorContainer"><select id="evaluationField-5284450b268cd62" disabled="disabled" data-modelbind="evaluation.fields.5284450b268cd62" aria-labelledby="assessmentText-4fa3e3cb429b5bc" class="assessmentFormField">  <option value=""></option>  <option value="6835d82d3fb8734f">0: There are no commits beyond the original fork</option>  <option value="c5ef168e618029ca">1: There is at least one commit beyond the original fork</option></select></div></div></div><div id="evaluatedGroup-960d6adaef2f56fc" class="assessmentGroup"><div class="assessmentExposition"><div id="assessmentText-960d6adaef2f56fc" class="assessmentText" dir="auto">Does the GitHub repository contain an R file containing code implementing the completed assignment?&nbsp;<br><br>NOTE: There is no need to run the code here, but rather you should visually inspect the R file in the GitHub repository and check to see that there is code there beyond the original stub that was committed there by the instructor. Do not attempt to judge whether the code is correct or not.<br><br>0 points: No, the R file does not contain any code implementing the completed assignment<br>1 point: The R file contains code implementing a partially completed assignment<br>2 points: The R file contains code implementing the complete assignment</div></div><div class="assessmentEvaluation" aria-labelledby="assessmentText-960d6adaef2f56fc"><div id="4ebcc2795ee6edb0-validationErrorMessage" class="validationErrorMessage"></div><div id="4ebcc2795ee6edb0-validationErrorContainer"><select id="evaluationField-4ebcc2795ee6edb0" disabled="disabled" data-modelbind="evaluation.fields.4ebcc2795ee6edb0" aria-labelledby="assessmentText-960d6adaef2f56fc" class="assessmentFormField">  <option value=""></option>  <option value="63d7caf783ded493">0: No code in the R file beyond original fork</option>  <option value="949b97ee7ca0d612">1: Code in R file is partially complete</option>  <option value="4725390ddf3f199f">2: Code in R file is complete</option></select></div></div></div><div id="evaluatedGroup-cd0843f9dd60f648" class="assessmentGroup"><div class="assessmentExposition"><div id="assessmentText-cd0843f9dd60f648" class="assessmentText" dir="auto">Does the R file containing the code have any comments explaining what the code does?<br><br>NOTE: The makeCacheMatrix and cacheSolve functions should both be documented with explanatory comments. There maybe other functions in the R file but they do not need to be commented.<br><br>0 points: There are no explanatory comments in the R file<br>1 points: One of the functions has some corresponding explanatory comments in the R file<br>2 points: Both functions have corresponding explanatory comments in the R file</div></div><div class="assessmentEvaluation" aria-labelledby="assessmentText-cd0843f9dd60f648"><div id="8617bebb597713c5-validationErrorMessage" class="validationErrorMessage"></div><div id="8617bebb597713c5-validationErrorContainer"><select id="evaluationField-8617bebb597713c5" disabled="disabled" data-modelbind="evaluation.fields.8617bebb597713c5" aria-labelledby="assessmentText-cd0843f9dd60f648" class="assessmentFormField">  <option value=""></option>  <option value="4b51fdc046fb9fcd">0: No explanatory comments</option>  <option value="fa1478b4fbf33157">1: One function has explanatory comments</option>  <option value="b5926082305d95b9">2: Both functions have explanatory comments</option></select></div></div></div><div id="evaluatedGroup-69c6c7e383ee782" class="assessmentGroup"><div class="assessmentExposition"><div id="assessmentText-69c6c7e383ee782" class="assessmentText" dir="auto">Does the R code implementing the 'makeCacheMatrix' function appear to be correct, to the best of your ability to judge?<br><br>NOTE: Do not run the R code on your own computer. Please examine the R code and determine to the best of your ability, whether the solution presented appears to match the requirements of the assignment. A correct solution (as best you can determine) gets 1 point and a solution that is well-written and easy to read gets an additional 1 point.<br><br>0 points: The solution contains at least one identifiable problem<br>1 point: The solution appears to be correct<br>2 points: The solution appears to be correct and is written in a well-formatted and easily readable style</div></div><div class="assessmentEvaluation" aria-labelledby="assessmentText-69c6c7e383ee782"><div id="6c3f5a7c9a1b87fd-validationErrorMessage" class="validationErrorMessage"></div><div id="6c3f5a7c9a1b87fd-validationErrorContainer"><select id="evaluationField-6c3f5a7c9a1b87fd" disabled="disabled" data-modelbind="evaluation.fields.6c3f5a7c9a1b87fd" aria-labelledby="assessmentText-69c6c7e383ee782" class="assessmentFormField">  <option value=""></option>  <option value="8e9b1f1372a3d01">0: Solution has at least one problem</option>  <option value="f38b5ac84da37c1f">1: Solution appears to be correct</option>  <option value="4954c0d26ff44862">2: Solution is correct and is well-written</option></select></div></div></div><div id="evaluatedGroup-2655aae9631dd856" class="assessmentGroup"><div class="assessmentExposition"><div id="assessmentText-2655aae9631dd856" class="assessmentText" dir="auto">Does the R code implementing the 'cacheSolve' function appear to be correct, to the best of your ability to judge?<br><br>NOTE: Do not run the R code on your own computer. Please examine the R code and determine to the best of your ability, whether the solution presented appears to match the requirements of the assignment. A correct solution (as best you can determine) gets 1 point and a solution that is well-written and easy to read gets an additional 1 point.<br><br>0 points: The solution contains at least one identifiable problem<br>1 point: The solution appears to be correct<br>2 points: The solution appears to be correct and is written in a well-formatted and easily readable style<br></div></div><div class="assessmentEvaluation" aria-labelledby="assessmentText-2655aae9631dd856"><div id="8867dc08fe38d92-validationErrorMessage" class="validationErrorMessage"></div><div id="8867dc08fe38d92-validationErrorContainer"><select id="evaluationField-8867dc08fe38d92" disabled="disabled" data-modelbind="evaluation.fields.8867dc08fe38d92" aria-labelledby="assessmentText-2655aae9631dd856" class="assessmentFormField">  <option value=""></option>  <option value="93a63dbc9377f92">0: Solution has at least one problem</option>  <option value="2e91acfcf24fe4b7">1: Solution appears to be correct</option>  <option value="90865c51e8945106">2: Solution is correct and is well-written</option></select></div></div></div></div> </div></div>
+  <div id="bottomContentToolbar" class="contentToolbar form-actions">
+<div class="assessmentActionBar"><div class="contentToolbarButtons"><div class="pull-left" style="text-align: left;"><p><label><input type="checkbox" id="honorCode" class="honorCode">&nbsp;In accordance with the Honor Code, I certify that my answers here are my own work, and that I have appropriately acknowledged all external sources (if any) that were used in this work.</label></p></div><div class="pull-right"><a id="assessmentSave" href="https://class.coursera.org/rprog-003/human_grading/view/courses/972138/assessments/3/submissions#" role="button" class="hg-internal btn">Save draft</a><a disabled="disabled" id="assessmentSubmit" href="https://class.coursera.org/rprog-003/human_grading/view/courses/972138/assessments/3/submissions#" role="button" class="assessmentSubmit hg-internal btn disabled">Submit for grading</a></div></div></div></div>
+</div>
+<div class="coursera-signature-modal"></div>
+<div id="coursera-signature-pending-modal" style="display:none">
+  <div class="coursera-signature-please-complete-modal modal">
+    <div style="height: 2px; background: black; position: relative; width: 558px;">
+      <div class="coursera-signature-modal-header modal-header"><a class="close coursera-signature-close-button">×</a><img src="./R Programming   Coursera_files/ribbon_stripes.png" class="coursera-signature-modal-ribbon">
+        <p class="coursera-signature-modal-signature-track">Signature Track</p>
+        <p class="coursera-signature-modal-title">Signature Track Profile incomplete</p>
+      </div>
+      <div style="position: relative; top: -10px; margin: 30px 10px 10px 70px;"><i style="margin-left: 60px; color: #c43b3b; font-size: 40px" class="icon-warning-sign"></i><span style="font-weight: bold; font-size: 16px">Oops! You have submitted your work, but you can't authenticate your coursework yet. </span> You still need to complete your Signature Track profile by registering your unique typing patterns and submitting webcam photos. You need to authenticate most of your assignments to get a Verified Certificate.
+        <p style="margin-top: 10px; font-weight: bold;">Please complete your profile as soon as possible.</p>
+      </div>
+      <div style="text-align: center; margin-bottom: 20px;">
+        <h4 style="margin-bottom: 0px;">You will need:</h4>
+        <div style="width: 40%; display: inline-block; vertical-align: top;">
+          <div style="height: 85px;"><img src="./R Programming   Coursera_files/webcam_keyboard.jpg" alt="Illustration of keyboard and camera" style="height: 85px;"></div>
+          <div> Keyboard and Webcam</div>
+        </div>
+        <div style="width: 40%; display: inline-block; vertical-align: top;">
+          <div style="height: 85px;"><img src="./R Programming   Coursera_files/government_id.jpg" alt="Illustration of identification card" style="margin-top: 14px"></div>
+          <div>Goverment-issued Photo ID</div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-bottom: 10px;"><a href="https://dt5zaw6a98blc.cloudfront.net/signature/phrase/rprog/972138">
+          <button style="margin-top: 0px; padding: 15px 25px;" class="coursera-signature-next-button">Complete my profile now</button></a></div><a style="font-size: smaller; float: right; margin-right: 20px; margin-bottom: 20px;" class="coursera-signature-nothanks">No thanks, I'll do this later. »</a>
+    </div>
+  </div>
+</div></div></div>
+</div></div></div>
+
+</div></div></div></div></div><div class="coursera-footer"></div></div></div></div><!--[if gte IE 8]><script>document.getElementById("coursera-loading-js").style.display = 'block';</script><![endif]-->
+<!--[if lte IE 7]><script>document.getElementById("coursera-loading-nojs").style.display = 'block';
+window._204 = window._204 || [];
+window._gaq = window._gaq || [];
+
+window._gaq.push(
+    ['_setAccount', 'UA-28377374-1'],
+    ['_setDomainName', window.location.hostname],
+    ['_setAllowLinker', true],
+    ['_trackPageview', window.location.pathname]);
+    
+window._204.push(
+  ['client', 'home'],
+  {key:"pageview", value:window.location.pathname});
+  </script><script src="https://eventing.coursera.org/204.min.js"></script><script src="https://ssl.google-analytics.com/ga.js"></script><![endif]-->
+<!--[if !IE]> --><script>document.getElementById("coursera-loading-js").style.display = 'block';</script><!-- <![endif]-->
+    <script src="./R Programming   Coursera_files/modernizr-custom.js"></script>
+  <script src="./R Programming   Coursera_files/require.js"></script><script data-baseurl="https://d2wvvaown1ul17.cloudfront.net/site-static/08c02d03e65132355fdf9390f6b5c12bac14e501/" data-version="08c02d03e65132355fdf9390f6b5c12bac14e501" data-timestamp="1400617999477" data-debug="0" data-locale="en_US" id="_require">if(document.getElementById("coursera-loading-js").style.display == 'block') {
+  (function(el) {
+     require.config({
+       //enforceDefine: true,
+       waitSeconds: 75,
+       baseUrl: el.getAttribute("data-baseurl"),
+       urlArgs: el.getAttribute("data-debug") == "1" ? "v=" + el.getAttribute("data-timestamp") : "",
+       shim: {
+          'underscore': {
+             exports: '_'
+          },
+          'backbone': {
+             deps: ['underscore', 'jquery'],
+             exports: 'Backbone',
+             init: function(_, $) {
+               Backbone.$ = $;
+               return Backbone;
+             }
+          },
+          'pages/hg/thirdparty/js/backbone.marionette': {
+            deps: ["backbone"]
+          },
+          'pages/hg/thirdparty/js/webshims/polyfiller': {
+            deps: ["jquery"]
+          },
+          'pages/hg/thirdparty/js/webshims/extras/mousepress': {
+            deps: ["jquery", "pages/hg/thirdparty/js/webshims/polyfiller"]
+          },
+          'pages/hg/thirdparty/js/jquery.throttle': {
+            deps: ["jquery"]
+          },
+          'js/lib/jquery.linkify': {
+            deps: ["jquery"]
+          },
+          'pages/hg/thirdparty/js/js/bootstrap/alert': {
+            deps: ["jquery", "pages/hg/thirdparty/js/bootstrap/transition"]
+          },
+          'spark/core/js/jquery_ui': {
+            deps: ["jquery"]
+          },
+          'spark/core/js/jquery.history': {
+            deps: ["jquery"]
+          },
+          'js/lib/bootstrap.tooltip': {
+            deps: ["jquery"]
+          },
+          'pages/hg/thirdparty/js/bootstrap/transition': {
+            deps: ["jquery"]
+          },
+          'pages/hg/thirdparty/js/bootstrap/tab': {
+            deps: ["jquery"]
+          },
+          'bundles/videojs/lib/video.4.3.0': {
+            exports: 'vjs'
+          }
+       },
+       paths: {
+          "jquery":                         "pages/spark/jquery",
+          "underscore":                     "js/core/underscore.1.5.2",
+          "backbone":                       "js/core/backbone.1.1.0",
+          "backbone.relational":            "js/lib/backbone.relational.0.8.6",
+          "i18n":                           "js/core/i18n._t",
+          "pages/spark/models/user.json":   "empty:",
+          "pages/spark/models/course.json": "empty:",
+          "pages/spark/models/navbar.json": "empty:"
+       },
+       callback: function() {
+                    require(["pages/hg/js/app/routes"]);
+                },
+       config: {
+         i18n: {
+           locale: (window.localStorage ? localStorage.getItem('locale') : '') || el.getAttribute('data-locale')
+         }
+       }
+     });
+  })(document.getElementById("_require"));
+}
+</script><script>define("pages/spark/models/user.json", [], function(){
+      return JSON.parse("{\"id\":1586079,\"email_address\":\"ravinsdrive@gmail.com\",\"full_name\":\"Ravin Kumar\",\"locale\":\"en_US\",\"timezone\":\"America\\\/Los_Angeles\",\"access_group_id\":\"4\",\"registration_time\":\"1399779344\",\"last_access_time\":\"1400632996\",\"last_access_ip\":\"68.185.168.239\",\"signature_track_register_time\":\"1400010897\",\"email_announcement\":\"1\",\"email_forum\":\"1\",\"in_signature_track\":\"1\",\"wishes_proctored_exam\":null,\"first_name\":\"Ravin\",\"permissions\":[\"default\",\"allow_site_access\"],\"group\":\"Student\",\"anonymous\":false,\"forum_title\":\"Student\",\"signature_track_state\":4,\"verified_quizzes\":[],\"submitted_quizzes\":[\"97\",\"99\"],\"scheduled_proctored_exam\":null,\"last_chance_modal\":1}");
+  });
+define("pages/spark/models/course.json", [], function(){
+      return JSON.parse("{\"id\":972138,\"isPrivate\":false,\"type\":\"public\",\"name\":\"R Programming\",\"instructor\":\"Roger D. Peng, PhD, Jeff Leek, PhD, Brian Caffo, PhD\",\"sessionName\":\"rprog-003\",\"externalBaseURL\":\"https:\\\/\\\/www.coursera.org\\\/\",\"shortname\":\"rprog\",\"host\":\"https:\\\/\\\/www.coursera.org\\\/\",\"assetUnversionedLink\":\"https:\\\/\\\/dt5zaw6a98blc.cloudfront.net\\\/site-static\\\/\",\"cheggID\":\"\",\"hasLTI\":true,\"badgevilleDomain\":\"\",\"linkable\":false,\"universityShortname\":\"jhu\",\"signatureTrackStatus\":{\"signature_track_enabled\":1},\"courseURLs\":{\"log_in_link\":\"https:\\\/\\\/accounts.coursera.org\\\/signin?post_redirect=https%3A%2F%2Faccounts.coursera.org%2Fsignin%3Fuser_action%3Dclass%26course_id%3D972138%26post_redirect%3Dhttps%253A%252F%252Fclass.coursera.org%252Frprog-003%252Fauth%252Fauth_redirector%253Ftype%253Dlogin%2526subtype%253Dnormal%2526visiting%253D\",\"sign_up_link\":\"https:\\\/\\\/accounts.coursera.org\\\/signup?enroll_cid=972138&enroll_sn=rprog&enroll_n=R Programming\",\"view_course_info_link\":\"https:\\\/\\\/www.coursera.org\\\/course\\\/rprog\",\"sign_up_link_cant_enroll\":\"https:\\\/\\\/accounts.coursera.org\\\/signup?post_redirect=https%3A%2F%2Fwww.coursera.org%2Fcourse%2Frprog\"},\"courseBase\":\"https:\\\/\\\/class.coursera.org\\\/rprog-003\\\/\",\"search\":true,\"hideWiki\":true,\"hideMeetup\":false,\"aceStartRegistrationDate\":\"Wed 31 Dec 1969  4:00 PM PST\",\"aceEndRegistrationDate\":\"Wed 31 Dec 1969  4:00 PM PST\",\"aceExamStartDate\":\"Wed 31 Dec 1969  4:00 PM PST\",\"aceExamEndDate\":\"Wed 31 Dec 1969  4:00 PM PST\",\"aceExamRules\":\"\",\"aceExamDuration\":\"\",\"aceBeforeExam\":false,\"aceAfterExam\":true,\"aceHours\":null,\"aceCreditType\":\"\",\"acePrice\":null,\"aceExamID\":null,\"aceEligible\":false,\"canRegisterForACE\":false,\"specialization\":{\"numCourse\":9,\"image\":\"https:\\\/\\\/s3.amazonaws.com\\\/coursera\\\/specializations\\\/jhudatascience\\\/logo_small.png\",\"id\":1,\"short_name\":\"jhudatascience\",\"name\":\"Data Science\"},\"supportForums\":true,\"textbooks\":\"\",\"inVideoQuizV2\":false,\"in_flexjoin\":\"\",\"honorCodeExtraText\":\"\",\"honorCodeCustomTitle\":\"\",\"honorCodeCustomButton\":\"\"}");
+  });
+define("pages/spark/models/navbar.json", [], function(){
+      return JSON.parse("{\"items\":[{\"name\":\"\",\"icon\":\"\",\"link_type\":\"circuit\",\"link_data\":\"\"},{\"name\":\"Course\",\"icon\":\"\",\"link_type\":\"heading\",\"link_data\":\"\"},{\"name\":\"Announcements\",\"icon\":\"home\",\"link_type\":\"circuit\",\"link_data\":\"class:index\"},{\"name\":\"Video Lectures\",\"icon\":\"lecture\",\"link_type\":\"circuit\",\"link_data\":\"lecture:index\"},{\"name\":\"Discussion Forums\",\"icon\":\"forum\",\"link_type\":\"circuit\",\"link_data\":\"forum:index\"},{\"name\":\"\",\"icon\":\"\",\"link_type\":\"circuit\",\"link_data\":\"\"},{\"name\":\"Exercises\",\"icon\":\"\",\"link_type\":\"heading\",\"link_data\":\"\"},{\"name\":\"Quizzes\",\"icon\":\"quiz\",\"link_type\":\"circuit\",\"link_data\":\"quiz:index\"},{\"name\":\"Programming Assignments 1, 3, & swirl\",\"icon\":\"assignment\",\"link_type\":\"circuit\",\"link_data\":\"assignment:index\"},{\"name\":\"Programming Assignment 2\",\"icon\":\"assignment\",\"link_type\":\"circuit\",\"link_data\":\"human_grading:index\"},{\"name\":\"\",\"icon\":\"\",\"link_type\":\"circuit\",\"link_data\":\"\"},{\"name\":\"About the course\",\"icon\":\"\",\"link_type\":\"heading\",\"link_data\":\"\"},{\"name\":\"Syllabus\",\"icon\":\"wiki\",\"link_type\":\"wiki\",\"link_data\":\"syllabus\"},{\"name\":\"About the Instructor\",\"icon\":\"\",\"link_type\":\"wiki\",\"link_data\":\"About_the_Instructor\"},{\"name\":\"Community\",\"icon\":\"\",\"link_type\":\"heading\",\"link_data\":\"\"}]}");
+  });
+</script><div class="hide confirm-navigation modal"><div class="modal-header"><h3>Confirm Navigation</h3></div><div class="modal-body"><div class="confirm-navigation-message"></div><div>Are you sure you want to leave this page?</div></div><div class="modal-footer"><button data-modal-close="data-modal-close" class="btn confirm-navigation-stay">Stay on this Page</button><button data-modal-close="data-modal-close" class="btn btn-danger confirm-navigation-leave">Leave this Page</button></div></div><div class="coursera-async-message" style="display: none;"></div><script id="hiddenlpsubmitdiv" style="display: none;"></script><script>try{for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); if (d) {for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ d.innerText=i; } } d.dispatchEvent(customEvent); }form.lpsubmitorig2(); } } }}catch(e){}</script><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-family: MathJax_Size1, monospace;">() [] {} </div></body></html>
