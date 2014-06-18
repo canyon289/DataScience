@@ -1,0 +1,6 @@
+Things I learned
+=================
+
+1. Learn how quantiles work
+2. Tables are good for summarizing data
+3. I should learn how to add another variable and cut data into groups
