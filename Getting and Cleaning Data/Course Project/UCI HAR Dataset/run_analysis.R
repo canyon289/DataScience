@@ -69,3 +69,4 @@ tidyset = ddply(testtrain, .(Subject,Activity), colwise(mean))
 
 #Write csv file
 write.csv(tidyset, file = "tidydataset.txt")
+write.table(tidyset, file = "tidydataset.txt", sep = "\t")
