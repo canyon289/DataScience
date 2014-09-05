@@ -46,7 +46,23 @@ qplot(interval, msteps, data = avgsteps)
 ```
 
 ## Imputing missing values
-
-
+All missing values will equal global average
+```{r}
+steps$steps[is.na(steps$steps)] = mean(steps$steps, na.rm = T)
+```
 
 ## Are there differences in activity patterns between weekdays and weekends?
+```{r}
+
+weekend <- function(day){
+  if (wday(day, label = T) %in% c("Sun", "Sat")){
+    return("Weekend")
+    }
+  return("Weekday")
+}
+steps = ddply(steps, .(date,interval), transform, day = weekend(date))
+
+qplot(interval, steps, data = steps, facets = day~.)
+```
+
+
