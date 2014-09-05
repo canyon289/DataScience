@@ -1,18 +1,20 @@
-# Reproducible Research: Peer Assessment 1
+---
+title: 'Reproducible Research: Peer Assessment 1'
+output:
+  html_document:
+    keep_md: yes
+---
 
 
 ## Loading and preprocessing the data
 
-Set working directory for my computer
-
-```r
-setwd("C:/Users/canyon/Documents/GitHub/DataScience/Reproducible Research/RepData_PeerAssessment1-master")
-```
 
 Load csv
 
 ```r
+library(knitr)
 steps = read.csv("activity.csv")
+opts_chunk$set(cache=TRUE)
 ```
 
 ## What is mean total number of steps taken per day?
@@ -53,26 +55,33 @@ median(steps$steps, na.rm = T)
 
 ```r
 library(plyr)
-```
-
-```
-## 
-## Attaching package: 'plyr'
-## 
-## The following object is masked from 'package:lubridate':
-## 
-##     here
-```
-
-```r
 avgsteps = ddply(steps, .(interval), summarise, msteps = mean(steps, na.rm = T))
-qplot(interval, msteps, data = avgsteps)
+ggplot(avgsteps, aes(x = interval, y=msteps)) + geom_line()
 ```
 
-![plot of chunk unnamed-chunk-6](./PA1_template_files/figure-html/unnamed-chunk-6.png) 
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5.png) 
 
 ## Imputing missing values
+All missing values will equal global average
 
-
+```r
+steps$steps[is.na(steps$steps)] = mean(steps$steps, na.rm = T)
+```
 
 ## Are there differences in activity patterns between weekdays and weekends?
+
+```r
+weekend <- function(day){
+  if (wday(day, label = T) %in% c("Sun", "Sat")){
+    return("Weekend")
+    }
+  return("Weekday")
+}
+steps = ddply(steps, .(date,interval), transform, day = weekend(date))
+
+ggplot(steps, aes(x = interval, y = steps)) + facet_grid(day~.) + geom_point()
+```
+
+![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7.png) 
+
+
