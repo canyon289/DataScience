@@ -31,16 +31,24 @@ steps$year  = year(steps$date)
 ```
 
 The mean of the totals steps taken per day is below
-```{r}
+```{r mean}
 mean(steps$steps, na.rm = T)
+```
+The median of the total number of steps is below
+```{r median}
 median(steps$steps, na.rm = T)
 ```
 
 ## What is the average daily activity pattern?
-```{r}
+```{r AveragePlot}
 library(plyr)
 avgsteps = ddply(steps, .(interval), summarise, msteps = mean(steps, na.rm = T))
 ggplot(avgsteps, aes(x = interval, y=msteps)) + geom_line()
+```
+The most steps on average
+```{r}
+avgsteps$interval[avgsteps$msteps == max(avgsteps$msteps)]
+
 ```
 
 ## Imputing missing values
@@ -48,6 +56,16 @@ All missing values will equal global average
 ```{r}
 steps$steps[is.na(steps$steps)] = mean(steps$steps, na.rm = T)
 ```
+```{r NewMean, ref.label = "mean"}
+```
+```{r NewMedian, ref.label = "median"}
+```
+```{r NewAveragePlot, ref.label = "AveragePlot"}
+
+```
+
+
+
 
 ## Are there differences in activity patterns between weekdays and weekends?
 ```{r}

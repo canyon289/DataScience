@@ -1,9 +1,4 @@
----
-title: 'Reproducible Research: Peer Assessment 1'
-output:
-  html_document:
-    keep_md: yes
----
+# Reproducible Research: Peer Assessment 1
 
 
 ## Loading and preprocessing the data
@@ -42,6 +37,7 @@ mean(steps$steps, na.rm = T)
 ```
 ## [1] 37.38
 ```
+The median of the total number of steps is below
 
 ```r
 median(steps$steps, na.rm = T)
@@ -59,7 +55,16 @@ avgsteps = ddply(steps, .(interval), summarise, msteps = mean(steps, na.rm = T))
 ggplot(avgsteps, aes(x = interval, y=msteps)) + geom_line()
 ```
 
-![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5.png) 
+![plot of chunk AveragePlot](./PA1_files/figure-html/AveragePlot.png) 
+The most steps on average
+
+```r
+avgsteps$interval[avgsteps$msteps == max(avgsteps$msteps)]
+```
+
+```
+## [1] 835
+```
 
 ## Imputing missing values
 All missing values will equal global average
@@ -67,6 +72,33 @@ All missing values will equal global average
 ```r
 steps$steps[is.na(steps$steps)] = mean(steps$steps, na.rm = T)
 ```
+
+```r
+mean(steps$steps, na.rm = T)
+```
+
+```
+## [1] 37.38
+```
+
+```r
+median(steps$steps, na.rm = T)
+```
+
+```
+## [1] 0
+```
+
+```r
+library(plyr)
+avgsteps = ddply(steps, .(interval), summarise, msteps = mean(steps, na.rm = T))
+ggplot(avgsteps, aes(x = interval, y=msteps)) + geom_line()
+```
+
+![plot of chunk NewAveragePlot](./PA1_files/figure-html/NewAveragePlot.png) 
+
+
+
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
@@ -82,6 +114,6 @@ steps = ddply(steps, .(date,interval), transform, day = weekend(date))
 ggplot(steps, aes(x = interval, y = steps)) + facet_grid(day~.) + geom_point()
 ```
 
-![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7.png) 
+![plot of chunk unnamed-chunk-6](./PA1_files/figure-html/unnamed-chunk-6.png) 
 
 
