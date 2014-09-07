@@ -1,0 +1,36 @@
+---
+title: "Assignment 2"
+author: "Ravin"
+date: "Friday, September 05, 2014"
+output: html_document
+---
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+Downloading file for analysis
+```{r DownloadFiles, eval = False}
+download.file(url = "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2",
+              destfile = "storm.bz2")
+```
+
+Load file into storm dataframe
+```{r LoadData}
+storm = read.csv(bzfile("storm.bz2"))
+```
+
+Summarize data by event type and fatality
+
+```{r InitialSummary}
+library(plyr)
+ef = ddply(storms, .(EVTYPE), summarise, fatalities = sum(FATALITIES), injuries = sum(INJURIES), affected = (sum(FATALITIES,INJURIES)))
+ef = eventfatality[order(eventfatality$fatalities, decreasing = TRUE),]
+```
+Sum Injuries and Fatalities to get total count of affected people
+```{r}
+eventfatality = ddply(eventfatality, .(EVTYPE), transform, affected = (fatalities + injuries))
+```
+
+
+
