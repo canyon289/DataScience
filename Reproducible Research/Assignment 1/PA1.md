@@ -4,23 +4,24 @@
 ## Loading and preprocessing the data
 
 
-Load csv
+####Load csv and set options
 
 ```r
 library(knitr)
-steps = read.csv("activity.csv")
 opts_chunk$set(cache=TRUE)
+steps = read.csv("activity.csv")
 ```
 
 ## What is mean total number of steps taken per day?
-Load packages
+#### Load packages
 
 ```r
 library(ggplot2)
 library(lubridate)
+library(plyr)
 ```
 
-Split date column into day, month, year
+####Split date column into day, month, year
 
 ```r
 steps$day = day(steps$date)
@@ -28,7 +29,7 @@ steps$month = month(steps$date)
 steps$year  = year(steps$date)
 ```
 
-The mean of the totals steps taken per day is below
+####The mean of the totals steps taken per day is below
 
 ```r
 mean(steps$steps, na.rm = T)
@@ -50,13 +51,13 @@ median(steps$steps, na.rm = T)
 ## What is the average daily activity pattern?
 
 ```r
-library(plyr)
 avgsteps = ddply(steps, .(interval), summarise, msteps = mean(steps, na.rm = T))
 ggplot(avgsteps, aes(x = interval, y=msteps)) + geom_line()
 ```
 
 ![plot of chunk AveragePlot](./PA1_files/figure-html/AveragePlot.png) 
-The most steps on average
+
+#### The most steps on average takes place during this interval
 
 ```r
 avgsteps$interval[avgsteps$msteps == max(avgsteps$msteps)]
@@ -67,7 +68,7 @@ avgsteps$interval[avgsteps$msteps == max(avgsteps$msteps)]
 ```
 
 ## Imputing missing values
-All missing values will equal global average
+####All missing values will equal global average
 
 ```r
 steps$steps[is.na(steps$steps)] = mean(steps$steps, na.rm = T)
@@ -90,13 +91,11 @@ median(steps$steps, na.rm = T)
 ```
 
 ```r
-library(plyr)
 avgsteps = ddply(steps, .(interval), summarise, msteps = mean(steps, na.rm = T))
 ggplot(avgsteps, aes(x = interval, y=msteps)) + geom_line()
 ```
 
 ![plot of chunk NewAveragePlot](./PA1_files/figure-html/NewAveragePlot.png) 
-
 
 
 
