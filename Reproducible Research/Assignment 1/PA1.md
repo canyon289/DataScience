@@ -38,7 +38,7 @@ mean(steps$steps, na.rm = T)
 ```
 ## [1] 37.38
 ```
-The median of the total number of steps is below
+##The median of the total number of steps is below
 
 ```r
 median(steps$steps, na.rm = T)
@@ -47,6 +47,21 @@ median(steps$steps, na.rm = T)
 ```
 ## [1] 0
 ```
+
+##Histogram of sum of steps per day
+
+```r
+qplot(ddply(steps, .(date),summarise, tsteps = sum(steps, na.rm = T))$tsteps,
+      xlab ="Total Steps per day",
+      ylab = "Number of Days")
+```
+
+```
+## stat_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.
+```
+
+![plot of chunk InitialHistogram](./PA1_files/figure-html/InitialHistogram.png) 
+
 
 ## What is the average daily activity pattern?
 
@@ -73,6 +88,19 @@ avgsteps$interval[avgsteps$msteps == max(avgsteps$msteps)]
 ```r
 steps$steps[is.na(steps$steps)] = mean(steps$steps, na.rm = T)
 ```
+
+
+```r
+qplot(ddply(steps, .(date),summarise, tsteps = sum(steps, na.rm = T))$tsteps,
+      xlab ="Total Steps per day",
+      ylab = "Number of Days")
+```
+
+```
+## stat_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.
+```
+
+![plot of chunk NewHistogram](./PA1_files/figure-html/NewHistogram.png) 
 
 ```r
 mean(steps$steps, na.rm = T)

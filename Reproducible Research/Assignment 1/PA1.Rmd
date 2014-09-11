@@ -35,10 +35,18 @@ steps$year  = year(steps$date)
 ```{r mean}
 mean(steps$steps, na.rm = T)
 ```
-The median of the total number of steps is below
+##The median of the total number of steps is below
 ```{r median}
 median(steps$steps, na.rm = T)
 ```
+
+##Histogram of sum of steps per day
+```{r InitialHistogram}
+qplot(ddply(steps, .(date),summarise, tsteps = sum(steps, na.rm = T))$tsteps,
+      xlab ="Total Steps per day",
+      ylab = "Number of Days")
+```
+
 
 ## What is the average daily activity pattern?
 ```{r AveragePlot}
@@ -57,12 +65,14 @@ avgsteps$interval[avgsteps$msteps == max(avgsteps$msteps)]
 ```{r}
 steps$steps[is.na(steps$steps)] = mean(steps$steps, na.rm = T)
 ```
+
+```{r NewHistogram, ref.label= "InitialHistogram"}
+```
 ```{r NewMean, ref.label = "mean"}
 ```
 ```{r NewMedian, ref.label = "median"}
 ```
 ```{r NewAveragePlot, ref.label = "AveragePlot"}
-
 ```
 
 
@@ -75,9 +85,13 @@ weekend <- function(day){
     }
   return("Weekday")
 }
-steps = ddply(steps, .(date,interval), transform, day = weekend(date))
 
-ggplot(steps, aes(x = interval, y = steps)) + facet_grid(day~.) + geom_point()
+#Number of steps over given interval
+steps2 = ddply(steps, .(date,interval), transform, weekday = weekend(date))
+steps2 = ddply(steps2, .(weekday,interval), summarise, avgsteps = mean(steps))
+
+
+ggplot(steps2, aes(x = interval, y = avgsteps)) + facet_grid(weekday~.) + geom_line()
 ```
 
 
