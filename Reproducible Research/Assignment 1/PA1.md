@@ -136,9 +136,13 @@ weekend <- function(day){
     }
   return("Weekday")
 }
-steps = ddply(steps, .(date,interval), transform, day = weekend(date))
 
-ggplot(steps, aes(x = interval, y = steps)) + facet_grid(day~.) + geom_point()
+#Number of steps over given interval
+steps2 = ddply(steps, .(date,interval), transform, weekday = weekend(date))
+steps2 = ddply(steps2, .(weekday,interval), summarise, avgsteps = mean(steps))
+
+
+ggplot(steps2, aes(x = interval, y = avgsteps)) + facet_grid(weekday~.) + geom_line()
 ```
 
 ![plot of chunk unnamed-chunk-6](./PA1_files/figure-html/unnamed-chunk-6.png) 
