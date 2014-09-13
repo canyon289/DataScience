@@ -9,10 +9,13 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(cache=TRUE)
+```
+
 Downloading file for analysis
-```{r DownloadFiles, eval = False}
-download.file(url = "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2",
-              destfile = "storm.bz2")
+```{r DownloadFiles, eval = FALSE}
+download.file(url = "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2", destfile = "storm.bz2")
 ```
 
 Load file into storm dataframe
@@ -22,15 +25,34 @@ storm = read.csv(bzfile("storm.bz2"))
 
 Summarize data by event type and fatality
 
+Define damage function which estimates cost mulipliers for damage cost
+```{r DamageFunction}
+fdamage = function(x){
+  #Set Multipliers
+  factorlevel = c("","-","?","+","0","1","2","3","4","5","6","7","8","B","h","H","K","m","M")
+  
+  #Some of the factor levels were not known and were assumed to be zero
+  factormultiplier = c(0,0,0,0,0,1,2,3,4,5,6,7,10^9,100,100,1000,1000,10^6,10^6)
+  
+  names(factormultiplier) = factorlevel
+  return(factormultiplier[[x]])
+}
+```
+
+Add damage column to table
+
+```{r CostofDamage}
+
+damage <- (storm[["CROPDMG"]]*sapply(storm[["CROPDMGEXP"]],fdamage) 
+          +storm[["PROPDMG"]]*sapply(storm[["PROPDMGEXP"]],fdamage))
+
+storm = cbind(storm,damage)
+```
+
 ```{r InitialSummary}
 library(plyr)
-ef = ddply(storms, .(EVTYPE), summarise, fatalities = sum(FATALITIES), injuries = sum(INJURIES), affected = (sum(FATALITIES,INJURIES)))
-ef = eventfatality[order(eventfatality$fatalities, decreasing = TRUE),]
-```
-Sum Injuries and Fatalities to get total count of affected people
-```{r}
-eventfatality = ddply(eventfatality, .(EVTYPE), transform, affected = (fatalities + injuries))
-```
+ef = ddply(storm, .(EVTYPE), summarise, fatalities = sum(FATALITIES), injuries = sum(INJURIES), affected = (sum(FATALITIES)+sum(INJURIES)), damage = sum(damage))
 
-
+ef = ef[order(ef$fatalities, decreasing = TRUE),]
+```
 
