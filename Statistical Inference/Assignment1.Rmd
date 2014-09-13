@@ -1,0 +1,21 @@
+---
+title: 'Statistical Inference Course Project'
+output:
+  html_document:
+    keep_md: yes
+---
+
+```{r GettingStarted}
+lambda = .2
+n = 40
+sim = 1000
+```
+
+Simulating the mean of a thousand trials
+
+```{r Replication}
+means = replicate(n= 1000, expr = mean(rexp(40,1)))
+qplot(means)
+```
+
+
