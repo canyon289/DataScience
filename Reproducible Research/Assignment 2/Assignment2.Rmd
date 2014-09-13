@@ -47,12 +47,39 @@ damage <- (storm[["CROPDMG"]]*sapply(storm[["CROPDMGEXP"]],fdamage)
           +storm[["PROPDMG"]]*sapply(storm[["PROPDMGEXP"]],fdamage))
 
 storm = cbind(storm,damage)
+rm(damage)
 ```
 
 ```{r InitialSummary}
 library(plyr)
 ef = ddply(storm, .(EVTYPE), summarise, fatalities = sum(FATALITIES), injuries = sum(INJURIES), affected = (sum(FATALITIES)+sum(INJURIES)), damage = sum(damage))
 
-ef = ef[order(ef$fatalities, decreasing = TRUE),]
+ef = ef[order(ef$affected, decreasing = TRUE),]
+```
+
+```{r testingchunk}
+dfm = melt(data = ef[1:10,], measure.vars = c("fatalities","injuries","affected"))
+
+ggplot(dfm, aes(EVTYPE,value, fill = variable, order=variabl)) + geom_bar(position = "dodge", stat = "identity")
+
+```
+```{r testcode}
+dat <- read.table(text="
+cars    trucks  suvs
+1   2   4
+3   5   4
+6   4   6
+4   5   6
+9   12  16", header=TRUE, as.is=TRUE)
+dat$day <- factor(c("Mo", "Tu", "We", "Th", "Fr"), 
+             levels=c("Mo", "Tu", "We", "Th", "Fr"))
+
+library(reshape2)
+library(ggplot2)
+
+mdat <- melt(dat, id.vars="day")
+head(mdat)
+ggplot(mdat, aes(variable, value, fill = day, order=variable)) +
+  geom_bar(stat="identity", position="dodge")
 ```
 
