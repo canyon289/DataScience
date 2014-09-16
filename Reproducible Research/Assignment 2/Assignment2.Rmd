@@ -10,7 +10,7 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(cache=TRUE)
+knitr::opts_chunk$set(cache=FALSE)
 ```
 
 Downloading file for analysis
@@ -19,7 +19,7 @@ download.file(url = "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStor
 ```
 
 Load file into storm dataframe
-```{r LoadData}
+```{r LoadData, echo=FALSE}
 storm = read.csv(bzfile("storm.bz2"))
 ```
 
@@ -57,29 +57,20 @@ ef = ddply(storm, .(EVTYPE), summarise, fatalities = sum(FATALITIES), injuries =
 ef = ef[order(ef$affected, decreasing = TRUE),]
 ```
 
-```{r testingchunk}
-dfm = melt(data = ef[1:10,], measure.vars = c("fatalities","injuries","affected"))
-
-ggplot(dfm, aes(EVTYPE,value, fill = variable, order=variabl)) + geom_bar(position = "dodge", stat = "identity")
-
-```
-```{r testcode}
-dat <- read.table(text="
-cars    trucks  suvs
-1   2   4
-3   5   4
-6   4   6
-4   5   6
-9   12  16", header=TRUE, as.is=TRUE)
-dat$day <- factor(c("Mo", "Tu", "We", "Th", "Fr"), 
-             levels=c("Mo", "Tu", "We", "Th", "Fr"))
-
+```{r Diasters}
 library(reshape2)
 library(ggplot2)
+dfm = melt(data = ef[1:10,], measure.vars = c("fatalities","injuries","affected"))
 
-mdat <- melt(dat, id.vars="day")
-head(mdat)
-ggplot(mdat, aes(variable, value, fill = day, order=variable)) +
-  geom_bar(stat="identity", position="dodge")
+ggplot(dfm, aes(reorder(EVTYPE,-value), value, fill = variable)) + geom_bar(position = "dodge", stat = "identity") + scale_x_discrete(labels = abbreviate)
+```
+
+```{r Costs}
+ef = ef[order(ef$damage, decreasing = TRUE),]
+ggplot(ef[1:10,], aes(x = reorder(EVTYPE,-damage),damage))+ geom_bar(position = "dodge", stat = "identity") + scale_x_discrete(labels = abbreviate)
+```
+
+#Appendix
+```{r LoadData, eval = FALSE}
 ```
 
