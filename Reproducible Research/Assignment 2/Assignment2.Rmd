@@ -8,7 +8,7 @@ output: html_document
 This analysis used storm data available onlien and condensed it to provide concise recommendations as to where to allocate resources. Summary analysis were performed to determine the most deadly and costly weather events across the United States. It was found that tornadoes by far were the deadliest weather event
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(cache=FALSE)
+knitr::opts_chunk$set(cache=TRUE)
 ```
 
 Downloading file for analysis
@@ -17,37 +17,10 @@ download.file(url = "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStor
 ```
 
 Load file into storm dataframe
-```{r LoadData, echo=FALSE}
+```{r LoadData, echo=FALSE, eval = FALSE}
 storm = read.csv(bzfile("storm.bz2"))
 ```
 
-
-
-Data by event type and fatality
-```{r FatalitiesSummary}
-library(plyr)
-ef = ddply(storm, .(EVTYPE), summarise, fatalities = sum(FATALITIES), injuries = sum(INJURIES), affected = (sum(FATALITIES)+sum(INJURIES)), damage = sum(damage))
-
-ef = ef[order(ef$affected, decreasing = TRUE),]
-```
-
-```{r CostofDamage}
-
-damage <- (storm[["CROPDMG"]]*sapply(storm[["CROPDMGEXP"]],fdamage) 
-          +storm[["PROPDMG"]]*sapply(storm[["PROPDMGEXP"]],fdamage))
-
-storm = cbind(storm,damage)
-rm(damage)
-```
-
-
-```{r Diasters}
-library(reshape2)
-library(ggplot2)
-dfm = melt(data = ef[1:10,], measure.vars = c("fatalities","injuries","affected"))
-
-ggplot(dfm, aes(reorder(EVTYPE,-value), value, fill = variable)) + geom_bar(position = "dodge", stat = "identity") + scale_x_discrete(labels = abbreviate)
-```
 Define damage function which estimates cost mulipliers for damage cost
 ```{r DamageFunction}
 fdamage = function(x){
@@ -63,6 +36,32 @@ fdamage = function(x){
 ```
 
 Add damage column to table
+```{r CostofDamage}
+
+damage <- (storm[["CROPDMG"]]*sapply(storm[["CROPDMGEXP"]],fdamage) 
+          +storm[["PROPDMG"]]*sapply(storm[["PROPDMGEXP"]],fdamage))
+
+storm = cbind(storm,damage)
+rm(damage)
+```
+
+Data by event type and fatality
+```{r FatalitiesSummary}
+library(plyr)
+ef = ddply(storm, .(EVTYPE), summarise, fatalities = sum(FATALITIES), injuries = sum(INJURIES), affected = (sum(FATALITIES)+sum(INJURIES)), damage = sum(damage))
+
+ef = ef[order(ef$affected, decreasing = TRUE),]
+```
+
+
+```{r Diasters}
+library(reshape2)
+library(ggplot2)
+dfm = melt(data = ef[1:10,], measure.vars = c("fatalities","injuries","affected"))
+
+ggplot(dfm, aes(reorder(EVTYPE,-value), value, fill = variable)) + geom_bar(position = "dodge", stat = "identity") + scale_x_discrete(labels = abbreviate)
+```
+
 
 ```{r Costs}
 ef = ef[order(ef$damage, decreasing = TRUE),]
