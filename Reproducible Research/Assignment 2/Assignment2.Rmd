@@ -11,18 +11,15 @@ This analysis used storm data available onlien and condensed it to provide conci
 knitr::opts_chunk$set(cache=TRUE)
 ```
 
-Downloading file for analysis
 ```{r DownloadFiles, eval = FALSE}
 download.file(url = "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2", destfile = "storm.bz2")
 ```
 
-Load file into storm dataframe
 ```{r LoadData, echo=FALSE, eval = FALSE}
 storm = read.csv(bzfile("storm.bz2"))
 ```
 
-Define damage function which estimates cost mulipliers for damage cost
-```{r DamageFunction}
+```{r DamageFunction, echo = FALSE}
 fdamage = function(x){
   #Set Multipliers
   factorlevel = c("","-","?","+","0","1","2","3","4","5","6","7","8","B","h","H","K","m","M")
@@ -35,8 +32,7 @@ fdamage = function(x){
 }
 ```
 
-Add damage column to table
-```{r CostofDamage}
+```{r CostofDamage, echo = FALSE}
 
 damage <- (storm[["CROPDMG"]]*sapply(storm[["CROPDMGEXP"]],fdamage) 
           +storm[["PROPDMG"]]*sapply(storm[["PROPDMGEXP"]],fdamage))
@@ -46,7 +42,7 @@ rm(damage)
 ```
 
 Data by event type and fatality
-```{r FatalitiesSummary}
+```{r FatalitiesSummary, echo = FALSE}
 library(plyr)
 ef = ddply(storm, .(EVTYPE), summarise, fatalities = sum(FATALITIES), injuries = sum(INJURIES), affected = (sum(FATALITIES)+sum(INJURIES)), damage = sum(damage))
 
@@ -59,18 +55,31 @@ library(reshape2)
 library(ggplot2)
 dfm = melt(data = ef[1:10,], measure.vars = c("fatalities","injuries","affected"))
 
-ggplot(dfm, aes(reorder(EVTYPE,-value), value, fill = variable)) + geom_bar(position = "dodge", stat = "identity") + scale_x_discrete(labels = abbreviate)
+ggplot(dfm, aes(reorder(EVTYPE,-value), value, fill = variable)) + geom_bar(position = "dodge", stat = "identity") + scale_x_discrete(labels = abbreviate) + ylab("Number of people") + xlab("Diasters") + ggtitle("People affected by diaster")
 ```
 
 
 ```{r Costs}
 ef = ef[order(ef$damage, decreasing = TRUE),]
-ggplot(ef[1:10,], aes(x = reorder(EVTYPE,-damage),damage))+ geom_bar(position = "dodge", stat = "identity") + scale_x_discrete(labels = abbreviate)
+ggplot(ef[1:10,], aes(x = reorder(EVTYPE,-damage),damage))+ geom_bar(position = "dodge", stat = "identity") + scale_x_discrete(labels = abbreviate) + ylab("Cost of Diaster") + xlab("Type of Diaster") + ggtitle("Cost of diaster per Event Type")
 ```
 
 
 
 #Appendix
+Download the Storm data
+```{r DownloadFiles, eval = FALSE}
+```
+Load storm data into dataframe
 ```{r LoadData, eval = FALSE}
 ```
+Create a function with estimates damage
+```{r DamageFunction, eval = FALSE}
+```
+
+Add cost of damage column to dataframe
+```{r CostofDamage, eval = FALSE}
+```
+
+
 

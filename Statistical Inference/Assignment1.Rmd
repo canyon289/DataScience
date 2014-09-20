@@ -5,10 +5,14 @@ output:
     keep_md: yes
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(cache=FALSE)
+```
+
 ```{r GettingStarted}
 lambda = .2
 n = 40
-sim = 100000
+sim = 10000
 ```
 
 Simulating the mean of a thousand trials
@@ -16,11 +20,35 @@ Simulating the mean of a thousand trials
 ```{r Replication}
 set.seed(1)
 means = replicate(sim, expr = mean(rexp(n,lambda)))
-ggplot(data.frame(means), aes(x=means)) + geom_density() + stat_function(fun = dnorm, colour ="blue", arg = list(mean = 1/lambda, sd=sqrt(lambda^-2/n)))
+```
+Theoretical Distribution Mean
+```{r DistributionMean}
+1/lambda
+```
+Simulated Mean
+```{r Simulated Mean}
+mean(means)
+```
+As you can see the results are quite close
+
+Similarly
+Theoretical Variance
+```{r Expected Variance}
+1/lambda^2
 ```
 
+```{r SimulatedVariance}
+var(means)*n
+```
+
+```{r plot}
+library(ggplot2)
+ggplot(data.frame(means), aes(x=means, color="red")) + geom_density() + stat_function(fun = dnorm, aes(color = "blue"), arg = list(mean = 1/lambda, sd=sqrt(lambda^-2/n))) + scale_colour_manual("Legend title", values = c("red", "blue"))
+```
+
+Estimating the confidence intervals of the mean
 ```{r ConfidenceInterval}
-mean(means) + c(-1,1)*sd(means)*qnorm(.975)
+mean(means) + c(-1,1)*sd(means)/sqrt(40)*qnorm(.975)
 sqrt(lambda^-2/n)
 ```
 
