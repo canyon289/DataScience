@@ -1,17 +1,17 @@
 ---
 title: "Assignment 2"
 author: "Ravin"
-date: "Friday, September 05, 2014"
+date: "September 18th, 2014"
 output: html_document
 ---
 
-This analysis used storm data available onlien and condensed it to provide concise recommendations as to where to allocate resources. Summary analysis were performed to determine the most deadly and costly weather events across the United States. It was found that tornadoes by far were the deadliest weather event
+This analysis used storm data available online and condensed it to provide concise recommendations as to where to allocate resources. Summary analysis were performed to determine the most deadly and costly weather events across the United States. It was found that tornadoes by far were the deadliest weather event. Additionally tornadoes were the most costly event as well. Detailed graphics showing the magnitude of the human related events and cost can be found below. A description of the method for cost estimate can be  found in the Appendix.
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(cache=TRUE)
+knitr::opts_chunk$set(cache=FALSE)
 ```
 
-```{r DownloadFiles, eval = FALSE}
+```{r DownloadFiles, eval = FALSE, echo=FALSE}
 download.file(url = "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2", destfile = "storm.bz2")
 ```
 
@@ -40,7 +40,7 @@ damage <- (storm[["CROPDMG"]]*sapply(storm[["CROPDMGEXP"]],fdamage)
 storm = cbind(storm,damage)
 rm(damage)
 ```
-
+#Analysis
 Data by event type and fatality
 ```{r FatalitiesSummary, echo = FALSE}
 library(plyr)
@@ -55,18 +55,22 @@ library(reshape2)
 library(ggplot2)
 dfm = melt(data = ef[1:10,], measure.vars = c("fatalities","injuries","affected"))
 
-ggplot(dfm, aes(reorder(EVTYPE,-value), value, fill = variable)) + geom_bar(position = "dodge", stat = "identity") + scale_x_discrete(labels = abbreviate) + ylab("Number of people") + xlab("Diasters") + ggtitle("People affected by diaster")
+ggplot(dfm, aes(reorder(EVTYPE,-value), value, fill = variable)) + geom_bar(position = "dodge", stat = "identity") + scale_x_discrete(labels = abbreviate) + ylab("Number of people") + xlab("Diasters") + ggtitle("People affected by Diaster")
 ```
 
 
 ```{r Costs}
 ef = ef[order(ef$damage, decreasing = TRUE),]
-ggplot(ef[1:10,], aes(x = reorder(EVTYPE,-damage),damage))+ geom_bar(position = "dodge", stat = "identity") + scale_x_discrete(labels = abbreviate) + ylab("Cost of Diaster") + xlab("Type of Diaster") + ggtitle("Cost of diaster per Event Type")
+ggplot(ef[1:10,], aes(x = reorder(EVTYPE,-damage),damage))+ geom_bar(position = "dodge", stat = "identity") + scale_x_discrete(labels = abbreviate) + ylab("Cost of Diaster") + xlab("Type of Diaster") + ggtitle("Cost of Diaster per Event Type")
 ```
 
 
 
 #Appendix
+##Data Processing
+The files were loaded downloaded directly from the given url and loaded into R from the zipped bs2 file. Additional columns were then added for the sum of the fatalities and injuries, and the sum of the property damage and crop damage. The data was then summarised by event type.
+
+##Detailed Code
 Download the Storm data
 ```{r DownloadFiles, eval = FALSE}
 ```
@@ -74,6 +78,7 @@ Load storm data into dataframe
 ```{r LoadData, eval = FALSE}
 ```
 Create a function with estimates damage
+Some damage identifiers were unknown and marked as zero in this report. The multipler factor of the damage is showen in the factormultiplier vector.
 ```{r DamageFunction, eval = FALSE}
 ```
 

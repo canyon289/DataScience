@@ -1,38 +1,41 @@
 ---
-title: 'Statistical Inference Course Project'
+title: "Statistical Inference Course Project"
 output:
   html_document:
     keep_md: yes
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(cache=FALSE)
 ```
 
+##Set Parameters for exponential distribution and simulation
 ```{r GettingStarted}
 lambda = .2
 n = 40
 sim = 10000
 ```
 
-Simulating the mean of a thousand trials
+##Simulating the mean of a thousand trials
 
 ```{r Replication}
 set.seed(1)
 means = replicate(sim, expr = mean(rexp(n,lambda)))
 ```
-Theoretical Distribution Mean
+
+##Theoretical Distribution Mean
 ```{r DistributionMean}
 1/lambda
 ```
-Simulated Mean
+##Simulated Mean
 ```{r Simulated Mean}
 mean(means)
 ```
 As you can see the results are quite close
 
-Similarly
-Theoretical Variance
+##Similarly
+##Theoretical Variance
 ```{r Expected Variance}
 1/lambda^2
 ```
@@ -41,15 +44,15 @@ Theoretical Variance
 var(means)*n
 ```
 
+
 ```{r plot}
 library(ggplot2)
-ggplot(data.frame(means), aes(x=means, color="red")) + geom_density() + stat_function(fun = dnorm, aes(color = "blue"), arg = list(mean = 1/lambda, sd=sqrt(lambda^-2/n))) + scale_colour_manual("Legend title", values = c("red", "blue"))
+ggplot(data.frame(means), aes(x=means, color="red")) + geom_density() + stat_function(fun = dnorm, aes(color = "blue"), arg = list(mean = 1/lambda, sd=sqrt(lambda^-2/n))) + scale_colour_manual("Legend title", values = c("red", "blue"), labels = c("Theoretical","Simulated"))+ggtitle("Comparison of Simulated Distribution to Theoretical Distribution")
 ```
 
-Estimating the confidence intervals of the mean
+##The confidence intervals of the mean estimate
 ```{r ConfidenceInterval}
 mean(means) + c(-1,1)*sd(means)/sqrt(40)*qnorm(.975)
-sqrt(lambda^-2/n)
 ```
 
 
